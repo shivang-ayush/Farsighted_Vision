@@ -4,30 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"Own Your Orbitz"</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Space Inspired Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to 'Own Your Orbitz'</h1>
+    <div class="stars"></div>
+    <header class="nav-header">
+        <h1 class="logo">SPACE·X</h1>
         <nav>
-            <a href="/">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="/" class="nav-link">HOME</a>
+            <a href="#about" class="nav-link">ABOUT</a>
+            <a href="#contact" class="nav-link">CONTACT</a>
         </nav>
     </header>
     <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Welcome to our website! We're excited to share our story with you.</p>
+        <section id="hero" class="hero-section">
+            <h2 class="hero-title">EXPLORE THE FUTURE</h2>
+            <p class="hero-subtitle">Push the boundaries of what's possible</p>
         </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Get in touch with us!</p>
+        <section id="about" class="content-section">
+            <h2>MISSION</h2>
+            <p>Pioneering the next generation of space exploration technology.</p>
+        </section>
+        <section id="contact" class="content-section">
+            <h2>CONNECT</h2>
+            <p>Join us on our journey to the stars.</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 Own Your Orbitz. All rights reserved.</p>
+        <p>&copy; 2024 SPACE·X INSPIRED. ALL RIGHTS RESERVED.</p>
     </footer>
+    <script>
+        gsap.from('.hero-title', {
+            duration: 1.5,
+            y: 100,
+            opacity: 0,
+            ease: 'power4.out'
+        });
+        
+        gsap.from('.nav-link', {
+            duration: 1,
+            y: -50,
+            opacity: 0,
+            stagger: 0.2,
+            ease: 'power2.out'
+        });
+    </script>
 </body>
 </html>
