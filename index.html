@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="stars"></div>
+    <div class="custom-cursor"></div> <!-- Custom cursor element -->
     <header class="nav-header">
         <h1 class="logo">SPACE·X</h1>
         <nav>
@@ -22,6 +23,15 @@
         <section id="hero" class="hero-section">
             <h2 class="hero-title">EXPLORE THE FUTURE</h2>
             <p class="hero-subtitle">Push the boundaries of what's possible</p>
+        </section>
+        <section id="hero" class="hero-section">
+        <h2 class="hero-title">EXPLORE THE FUTURE</h2>
+        <p class="hero-subtitle">Push the boundaries of what's possible</p>
+        <!-- Add Mars and Moon spheres -->
+        <div class="planet-container">
+            <div class="planet mars"></div>
+            <div class="planet moon"></div>
+        </div>
         </section>
         <section id="about" class="content-section">
             <h2>MISSION</h2>
@@ -37,6 +47,13 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.querySelector('.custom-cursor');
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = `${e.pageX}px`;
+                cursor.style.top = `${e.pageY}px`;
+            });
+
             gsap.from('.hero-title', {
                 duration: 1.5,
                 y: 100,
