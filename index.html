@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Inspired Website</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
 </head>
@@ -37,19 +36,21 @@
         <p>&copy; 2024 SPACE·X INSPIRED. ALL RIGHTS RESERVED.</p>
     </footer>
     <script>
-        gsap.from('.hero-title', {
-            duration: 1.5,
-            y: 100,
-            opacity: 0,
-            ease: 'power4.out'
-        });
-        
-        gsap.from('.nav-link', {
-            duration: 1,
-            y: -50,
-            opacity: 0,
-            stagger: 0.2,
-            ease: 'power2.out'
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from('.hero-title', {
+                duration: 1.5,
+                y: 100,
+                opacity: 0,
+                ease: 'power4.out'
+            });
+
+            gsap.from('.nav-link', {
+                duration: 1,
+                y: -50,
+                opacity: 0,
+                stagger: 0.2,
+                ease: 'power2.out'
+            });
         });
     </script>
 </body>
